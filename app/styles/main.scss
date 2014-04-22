@@ -1,0 +1,27 @@
+@import "../../bower_components/sass-meyer-reset/_sass-meyer-reset";
+@import '../../bower_components/breakpoint-sass/stylesheets/_breakpoint.scss';
+@import "../../bower_components/susy/sass/_susy.scss";
+@import "./functions";
+
+*,
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+$susy:(
+flow: ltr,
+columns:6,
+gutters:1/4,
+output:12,
+debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+);
+.container{
+  @include container(80%);
+  @include clearfix();
+}

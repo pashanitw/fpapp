@@ -1,0 +1,45 @@
+/*
+Syntax error: Invalid CSS after "$susy": expected ":", was ".container{"
+        on line 12 of main.scss
+
+7: *:after,
+8: *:before {
+9:   @include box-sizing(border-box);
+10: }
+11: $susy
+12: .container{
+13:   @include container(80%);
+14:   background: red;
+15:   @include clearfix();
+16: }
+17: .ag1{
+
+Backtrace:
+main.scss:12
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:1308:in `expected'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:1242:in `expected'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:1237:in `tok!'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:598:in `variable'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:654:in `block_child'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:647:in `block_contents'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:116:in `stylesheet'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:41:in `parse'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/engine.rb:409:in `_to_tree'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/engine.rb:274:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:186:in `each'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:489:in `watch_or_update'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:346:in `process_result'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:43:in `parse'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:22:in `parse!'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/bin/scss:13:in `<top (required)>'
+C:/Ruby193/bin/scss:23:in `load'
+C:/Ruby193/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"$susy\": expected \":\", was \".container{\"\A         on line 12 of main.scss\A \A 7: *:after,\A 8: *:before {\A 9:   @include box-sizing(border-box);\A 10: }\A 11: $susy\A 12: .container{\A 13:   @include container(80%);\A 14:   background: red;\A 15:   @include clearfix();\A 16: }\A 17: .ag1{"; }

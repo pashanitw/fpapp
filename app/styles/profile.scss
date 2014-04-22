@@ -1,0 +1,96 @@
+@import '../../bower_components/breakpoint-sass/stylesheets/_breakpoint.scss';
+@import "../../bower_components/susy/sass/_susy";
+@import "./functions";
+@import "./sprites";
+
+$mobil-view: 320px;
+$tablet-view: 660px 800px;
+$desktop: 800px 1200px;
+
+$layout_12:(
+columns:13,
+gutters:1/4
+);
+$layout_16:(
+columns:16,
+gutters:1/4
+);
+.container{
+@include breakpoint($tablet-view) {
+ @include layout($layout_12);
+}
+@include breakpoint($desktop){
+  @include layout($layout_16);
+}
+}
+.profile-info{
+  @include breakpoint($tablet-view) {
+    @include span(5 of 13);
+  }
+  @include breakpoint($desktop){
+    @include span(4 of 16);
+  }
+  .profile-about{
+    @include breakpoint($mobil-view) {
+      img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+      }
+      margin-bottom: 36px;
+      margin-top: 17px;
+    }
+    @include breakpoint($tablet-view) {
+      @include span(100%);
+    }
+    @include breakpoint($desktop){
+      @include span(100%);
+    }
+  }
+  .friend-info{
+    @include breakpoint($mobil-view){
+      margin-top: 33px;
+    }
+    @include breakpoint($tablet-view) {
+      @include span(100%);
+    }
+    @include breakpoint($desktop){
+      @include span(100%);
+    }
+    .main-info{
+      li{
+        @include breakpoint($tablet-view) {
+        @include span(4 of 12);
+        }
+        @include breakpoint($desktop){
+          @include span(4 of 4);
+          margin-bottom: 27px;
+        }
+        h3{
+          span{
+            @include breakpoint($tablet-view) {
+              font-size: 0.8em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.album-list{
+  @include breakpoint($tablet-view) {
+  @include pre(5 of 12);
+  }
+  @include breakpoint($desktop){
+    @include pre(4 of 16);
+  }
+  li{
+    @include breakpoint($tablet-view) {
+      @include span(2 of 8);
+    }
+    @include breakpoint($desktop){
+      @include span(4 of 12);
+    }
+  }
+}

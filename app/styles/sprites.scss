@@ -1,0 +1,17 @@
+@mixin sprite() {
+  background: url("../images/symbol.png") 0 0 no-repeat;
+  background-size: 192px 5120px;
+}
+@mixin width-height($width:0,$height:0){
+  width: $width;
+  height: $height;
+}
+@mixin inlBlk(){
+  display: inline-block;
+}
+.search-icon{
+  @include inlBlk();
+  @include sprite();
+ background-position: -142px -80px;
+ @include width-height(36px,31px);
+}

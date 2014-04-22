@@ -1,0 +1,84 @@
+/*
+Syntax error: Undefined mixin 'inlBlk'.
+        on line 39 of flexible.scss, in `inlBlk'
+        from line 39 of flexible.scss
+
+34:   background: #1a5a92;
+35:   border-bottom: 3px solid #103e66;
+36:   padding: 5px 0 0;
+37:   color: #FFF;
+38:   .user-name{
+39:     @include inlBlk();
+40:   }
+41: }
+42: .profile-info{
+43:   @include clearfix();
+44: .profile-about{
+
+Backtrace:
+flexible.scss:39:in `inlBlk'
+flexible.scss:39
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:320:in `block in visit_mixin'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:98:in `block in with_mixin'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:121:in `with_frame'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:98:in `with_mixin'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:318:in `visit_mixin'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:121:in `with_frame'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:389:in `map'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:121:in `with_frame'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:389:in `map'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:121:in `with_frame'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:152:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:151:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/tree/root_node.rb:20:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/engine.rb:274:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:186:in `each'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:489:in `watch_or_update'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:346:in `process_result'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:43:in `parse'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:22:in `parse!'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/bin/scss:13:in `<top (required)>'
+C:/Ruby193/bin/scss:23:in `load'
+C:/Ruby193/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined mixin 'inlBlk'.\A         on line 39 of flexible.scss, in `inlBlk'\A         from line 39 of flexible.scss\A \A 34:   background: #1a5a92;\A 35:   border-bottom: 3px solid #103e66;\A 36:   padding: 5px 0 0;\A 37:   color: #FFF;\A 38:   .user-name{\A 39:     @include inlBlk();\A 40:   }\A 41: }\A 42: .profile-info{\A 43:   @include clearfix();\A 44: .profile-about{"; }
