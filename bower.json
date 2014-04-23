@@ -6,7 +6,9 @@
     "jquery": "~1.11.0",
     "susy": "~2.1.1",
     "sass-toolkit": "~2.3.0",
-    "sass-meyer-reset": "*"
+    "sass-meyer-reset": "*",
+    "requirejs": "~2.1.11",
+    "breakpoint-sass": "~2.4.2"
   },
   "devDependencies": {}
 }

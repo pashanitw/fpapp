@@ -37,56 +37,11 @@
                     <li>Profile</li>
                 </ul>
             </nav>
-            <hr/>
-            <aside class="profile-info">
-               <div class="profile-about">
-                   <img src="images/cover.jpg" alt=""/>
-                   <h3>Pasha</h3>
-               </div>
-                <div class="friend-info">
-                    <ul class="main-info">
-                        <li class="info-followers">
-                            <h3 class="">235 <span>followers</span></h3>
-                        </li>
-                        <li>
-                            <h3 class="info-friends">400 <span>Friends</span></h3>
-                        </li>
-                        <li class="last-child">
-                            <h3 class="info-albums">600 <span>Albums</span></h3>
-                        </li>
-                    </ul>
-                    <h3 class="edit-profile"><a href="">EditProfile</a></h3>
-                </div>
-            </aside>
-            <h3>Albums</h3>
-            <hr/>
-            <article class="album-list">
-                <ul>
-                    <li class="fb-album"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album last-child"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album last-child"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album last-child"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album last-child"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album last-child"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album last-child"><img src="images/cover.jpg" alt=""/></li>
-                    <li class="fb-album"><img src="images/cover.jpg" alt=""/></li>
-                </ul>
-            </article>
+            <div id="app"></div>
             <footer><span>@COPYRIGHT 2014 PASHA</span></footer>
         </div>
-
-
+        <script data-main="bootstrap" src="../bower_components/requirejs/require.js"></script>
+        <script src="tmpl/tmpl.js"></script>
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -104,18 +59,6 @@
         </script>
 
         <!-- build:js scripts/plugins.js -->
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-        <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
