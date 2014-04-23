@@ -1,0 +1,39 @@
+define(['route/router'],function(router){
+    var routes=[
+        {
+            name:'Profile',
+            url:"profile",
+            controller:'controllers/profile',
+            view:'templates/profile'
+        },
+        {
+            name:'EditProfile',
+            url:"profile",
+            controller:'controllers/profile',
+            view:'templates/profile'
+        },
+        {
+            name:'Albums',
+            url:"albums",
+            controller:'controllers/albums',
+            view:'templates/albums'
+        },
+        {
+            name:'Login',
+            url:"login",
+            controller:'controllers/login',
+            view:'templates/login'
+        }
+        ],
+        activate=function(){
+            if(arguments.length===0){
+              router.activateDefault();
+                return;
+            }
+              router.activate(arguments[0])
+        }
+    router.register(routes,0);
+    return {
+        activate:activate
+    }
+});
