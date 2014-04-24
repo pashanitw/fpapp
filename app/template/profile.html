@@ -1,0 +1,35 @@
+<script type="text/tmpl" id="profile">
+<hr/>
+Hello, <%=  %>
+<aside class="profile-info">
+    <div class="profile-about">
+        <img src="images/cover.jpg" alt=""/>
+        <h3>Pasha</h3>
+    </div>
+    <div class="friend-info">
+        <ul class="main-info">
+            <li class="info-followers">
+                <h3 class="">235 <span>followers</span></h3>
+            </li>
+            <li>
+                <h3 class="info-friends">400 <span>Friends</span></h3>
+            </li>
+            <li class="last-child">
+                <h3 class="info-albums">600 <span>Albums</span></h3>
+            </li>
+        </ul>
+        <h3 class="edit-profile"><a href="">EditProfile</a></h3>
+    </div>
+</aside>
+<h3>Albums</h3>
+<hr/>
+<article class="album-list">
+    <ul>
+    <% for (var i = 0; i < albums.length; i++) { %>
+<li class='fb-album'>
+<img src='<%= albums[i] %>' alt=""/>
+</li>
+<% }%>
+ </ul>
+</article>
+  </script>
