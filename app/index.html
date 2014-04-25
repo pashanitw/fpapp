@@ -1,87 +1,135 @@
 <!doctype html>
 <html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <title>sass</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <link rel="shortcut icon" href="/favicon.ico">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <!-- build:css styles/vendor.css -->
-        <!-- bower:css -->
+<head>
+    <meta charset="utf-8">
+    <title>sass</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
 
-        <!-- endbower -->
-        <!-- endbuild -->
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="../styles/flexible.css"/>
-        <link rel="stylesheet" href="../styles/sprites.css"/>
-        <link rel="stylesheet" href="../styles/profile.css"/>
-        <!-- endbuild -->
-    </head>
-    <body>
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="../styles/flexible.css"/>
+    <link rel="stylesheet" href="../styles/sprites.css"/>
+    <link rel="stylesheet" href="../styles/profile.css"/>
+    <link rel="stylesheet" href="../styles/albums.css"/>
+    <!-- endbuild -->
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
 
 
-        <div class="container">
-            <nav class="main-navigation">
-                <h3 class="user-name">Pasha</h3>
-                <ul class="nav-elem">
-                    <li class='search'><span class="search-icon"></span></li>
-                    <li class=" expand"><span class="icon"></span></li>
-                </ul>
-                <ul class="collapse-nav">
-                    <li>Home</li>
-                    <li>Friends</li>
-                    <li>Profile</li>
-                </ul>
-            </nav>
-            <div id="app"></div>
-            <footer><span>@COPYRIGHT 2014 PASHA</span></footer>
+<div class="container">
+    <nav class="main-navigation">
+        <h3 class="user-name">Pasha</h3>
+        <ul class="nav-elem">
+            <li class='search'><span class="search-icon"></span></li>
+            <li class=" expand"><span class="icon"></span></li>
+        </ul>
+        <ul class="collapse-nav">
+            <li>Home</li>
+            <li>Friends</li>
+            <li>Profile</li>
+        </ul>
+    </nav>
+    <div id="app">
+
+        <aside class="album-list">
+            <h3 class="">Albums <span class="expand-icon"></span></h3>
+            <ul>
+                <span class="previous-icon"></span>
+                <span class="next-icon"></span>
+                <li><img src="images/cover.jpg" alt=""/></li>
+                <li><img src="images/cover.jpg" alt=""/></li>
+                <li><img src="images/cover.jpg" alt=""/></li>
+                <li><img src="images/cover.jpg" alt=""/></li>
+                <li><img src="images/cover.jpg" alt=""/></li>
+            </ul>
+            <hr/>
+        </aside>
+        <div class="slide-view">
+                <div class="slider-container">
+                    <span class="previous-icon"></span>
+                    <span class="next-icon"></span>
+                    <img src="images/profile.jpg" alt=""/>
+                </div>
+
+            <ul class="preview">
+                <span class="previous-icon"></span>
+                <span class="next-icon"></span>
+                <li><img src="images/cover.jpg" alt=""/></li>
+                <li><img src="images/cover.jpg" alt=""/></li>
+                <li><img src="images/cover.jpg" alt=""/></li>
+                <li><img src="images/cover.jpg" alt=""/></li>
+                <li><img src="images/cover.jpg" alt=""/></li>
+                <li><img src="images/cover.jpg" alt=""/></li>
+                <li><img src="images/cover.jpg" alt=""/></li>
+                <li><img src="images/cover.jpg" alt=""/></li>
+                <li><img src="images/cover.jpg" alt=""/></li>
+                <li><img src="images/cover.jpg" alt=""/></li>
+            </ul>
+
         </div>
-        <script>
-            window.fbAsyncInit = function () {
-                FB.init({
-                    appId: '572927169465707',
-                    status: true,
-                    xfbml: true
+    </div>
+    <footer><span>@COPYRIGHT 2014 PASHA</span></footer>
+</div>
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '572927169465707',
+            status: true,
+            xfbml: true
+        });
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<script data-main="bootstrap" src="../bower_components/requirejs/require.js"></script>
+<script src="tmpl/tmpl.js"></script>
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    (function (b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+                function () {
+                    (b[l].q = b[l].q || []).push(arguments)
                 });
-            };
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+</script>
+<!-- build:js scripts/plugins.js -->
+<!-- endbuild -->
 
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) {
-                    return;
-                }
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/en_US/all.js";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        </script>
-        <script data-main="bootstrap" src="../bower_components/requirejs/require.js"></script>
-        <script src="tmpl/tmpl.js"></script>
-        <!-- build:js scripts/vendor.js -->
-        <!-- bower:js -->
-        <script src="../bower_components/jquery/dist/jquery.js"></script>
-        <!-- endbower -->
-        <!-- endbuild -->
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-        <!-- build:js scripts/plugins.js -->
-        <!-- endbuild -->
-
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+<!-- build:js({app,.tmp}) scripts/main.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
 </body>
 </html>

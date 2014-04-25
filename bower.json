@@ -8,7 +8,8 @@
     "sass-toolkit": "~2.3.0",
     "sass-meyer-reset": "*",
     "requirejs": "~2.1.11",
-    "breakpoint-sass": "~2.4.2"
+    "breakpoint-sass": "~2.4.2",
+    "knockout": "~3.1.0"
   },
   "devDependencies": {}
 }

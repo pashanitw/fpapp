@@ -8,7 +8,7 @@ var userPermissions=['user_likes,publish_actions,user_about_me,user_location,use
             FB.login(function(){}, {scope: userPermissions});
         }
     });
-    FB.login(function(){
+/*    FB.login(function(){
         routes.activate();
-    }, {scope: userPermissions});
+    }, {scope: userPermissions});*/
 });

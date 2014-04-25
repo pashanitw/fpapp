@@ -15,3 +15,32 @@
  background-position: -142px -80px;
  @include width-height(36px,31px);
 }
+.expand-icon{
+  @include inlBlk();
+  @include sprite();
+  background-position: -77px -3663px;
+  @include width-height(42px,33px);
+}
+.previous-icon{
+  @include inlBlk();
+  @include sprite();
+  background-position: -16px -1170px;
+  @include width-height(30px,34px);
+  left:0;
+  position: absolute;
+  top:50%;
+  margin-top: -15px;
+  z-index: 1000;
+}
+.next-icon{
+  @include inlBlk();
+  @include sprite();
+  background-position: -16px -1298px;
+  @include width-height(30px,34px);
+  right: 0;
+  position: absolute;
+  top:50%;
+  margin-top: -15px;
+  z-index: 1000;
+}
+/* background-position: -16px -1493px; for - */
