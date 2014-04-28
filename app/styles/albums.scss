@@ -1,0 +1,95 @@
+@import '../../bower_components/breakpoint-sass/stylesheets/_breakpoint.scss';
+@import "../../bower_components/susy/sass/_susy";
+@import "./functions";
+@import "./sprites";
+
+$mobil-view: 320px;
+$tablet-view: 660px 800px;
+$desktop: 800px 1200px;
+#slide-show {
+  @include span(100%);
+  @include breakpoint($desktop) {
+   display: table;
+  }
+  .slide-view {
+    @include clearfix();
+    @include breakpoint($desktop) {
+
+      @include span(8 of 12);
+    }
+    background-color: #000000;
+    &:after {
+
+    }
+    &:before {
+
+    }
+    width: 90%;
+    float: none;
+    margin: 0 auto;
+    @include breakpoint($mobil-view) {
+
+    }
+    @include breakpoint($tablet-view) {
+
+    }
+    .slider-container {
+      position: relative;
+      width: 100%;
+      @include breakpoint($mobil-view) {
+        height: 320px;
+      }
+      @include breakpoint($tablet-view) {
+        height: 500px;
+      }
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .preview {
+      @include span(100%);
+      background-color: lightgreen;
+      text-align: center;
+      position: relative;
+      @include clearfix();
+
+      li {
+        @include width-height(auto, auto);
+        @include inlBlk();
+        img {
+          max-height: 50px;
+          max-width: 100%;
+          border-radius: 5px;
+          &:hover {
+            border: 1px solid red;
+          }
+        }
+        margin-right: 10px;
+      }
+      padding: 10px;
+      overflow: hidden;
+    }
+  }
+  .album-list {
+    @include breakpoint($desktop) {
+      @include span(4 of 12 last);
+    }
+  }
+  .upload-pic {
+    @include expand-menu();
+    @include breakpoint($desktop) {
+      @include span(4 of 12 last);
+    }
+    margin-bottom: 2px;
+    li {
+      line-height: 2;
+      border: 1px solid lightgray;
+      text-align: center;
+      .upload-button {
+        background-color: lightblue;
+        border-radius: 5px;
+      }
+    }
+  }
+}

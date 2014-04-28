@@ -18,8 +18,18 @@
 .expand-icon{
   @include inlBlk();
   @include sprite();
-  background-position: -77px -3663px;
-  @include width-height(42px,33px);
+  background-size: 96px 2560px;
+  background-position: -32px -704px;
+  width: 28px;
+  height: 28px;
+}
+.expand-icon{
+  @include inlBlk();
+  @include sprite();
+  background-size: 96px 2560px;
+  background-position: -32px -704px;
+  width: 28px;
+  height: 28px;
 }
 .previous-icon{
   @include inlBlk();
@@ -27,6 +37,7 @@
   background-position: -16px -1170px;
   @include width-height(30px,34px);
   left:0;
+  cursor: pointer;
   position: absolute;
   top:50%;
   margin-top: -15px;
@@ -42,5 +53,6 @@
   top:50%;
   margin-top: -15px;
   z-index: 1000;
+  cursor: pointer;
 }
 /* background-position: -16px -1493px; for - */

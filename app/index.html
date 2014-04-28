@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../styles/sprites.css"/>
     <link rel="stylesheet" href="../styles/profile.css"/>
     <link rel="stylesheet" href="../styles/albums.css"/>
+    <link rel="stylesheet" href="../styles/friends.css"/>
     <!-- endbuild -->
 </head>
 <body>
@@ -30,53 +31,17 @@
     <nav class="main-navigation">
         <h3 class="user-name">Pasha</h3>
         <ul class="nav-elem">
-            <li class='search'><span class="search-icon"></span></li>
             <li class=" expand"><span class="icon"></span></li>
         </ul>
-        <ul class="collapse-nav">
-            <li>Home</li>
-            <li>Friends</li>
-            <li>Profile</li>
+        <ul >
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#albums">Albums</a></li>
+            <li><a href="#friends">Friends</a></li>
+            <li><a href="#logout">Logout</a></li>
         </ul>
     </nav>
     <div id="app">
 
-        <aside class="album-list">
-            <h3 class="">Albums <span class="expand-icon"></span></h3>
-            <ul>
-                <span class="previous-icon"></span>
-                <span class="next-icon"></span>
-                <li><img src="images/cover.jpg" alt=""/></li>
-                <li><img src="images/cover.jpg" alt=""/></li>
-                <li><img src="images/cover.jpg" alt=""/></li>
-                <li><img src="images/cover.jpg" alt=""/></li>
-                <li><img src="images/cover.jpg" alt=""/></li>
-            </ul>
-            <hr/>
-        </aside>
-        <div class="slide-view">
-                <div class="slider-container">
-                    <span class="previous-icon"></span>
-                    <span class="next-icon"></span>
-                    <img src="images/profile.jpg" alt=""/>
-                </div>
-
-            <ul class="preview">
-                <span class="previous-icon"></span>
-                <span class="next-icon"></span>
-                <li><img src="images/cover.jpg" alt=""/></li>
-                <li><img src="images/cover.jpg" alt=""/></li>
-                <li><img src="images/cover.jpg" alt=""/></li>
-                <li><img src="images/cover.jpg" alt=""/></li>
-                <li><img src="images/cover.jpg" alt=""/></li>
-                <li><img src="images/cover.jpg" alt=""/></li>
-                <li><img src="images/cover.jpg" alt=""/></li>
-                <li><img src="images/cover.jpg" alt=""/></li>
-                <li><img src="images/cover.jpg" alt=""/></li>
-                <li><img src="images/cover.jpg" alt=""/></li>
-            </ul>
-
-        </div>
     </div>
     <footer><span>@COPYRIGHT 2014 PASHA</span></footer>
 </div>
@@ -105,6 +70,7 @@
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
 <script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/knockout/build/knockout-raw.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 

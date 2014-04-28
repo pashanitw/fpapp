@@ -1,0 +1,47 @@
+/*
+Syntax error: Invalid CSS after "  font-weight": expected ";", was ": 400;"
+        on line 4 of fonts.scss
+
+1: @font-face {
+2:   font-family: 'New Johnson';
+3:   src: url('../fonts/newjohnston.ttf')
+4:   font-weight: 400;
+5:   font-style: normal;
+6: }
+
+Backtrace:
+fonts.scss:4
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:1308:in `expected'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:1242:in `expected'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:1237:in `tok!'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:687:in `block in declaration_or_ruleset'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:1282:in `call'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:1282:in `rethrow'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:693:in `declaration_or_ruleset'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:655:in `block_child'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:647:in `block_contents'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:207:in `directive_body'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:199:in `directive'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:654:in `block_child'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:644:in `block_contents'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:116:in `stylesheet'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/scss/parser.rb:41:in `parse'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/engine.rb:409:in `_to_tree'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/engine.rb:274:in `render'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:186:in `each'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:489:in `watch_or_update'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:346:in `process_result'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:43:in `parse'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/lib/sass/exec.rb:22:in `parse!'
+C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.3.5/bin/scss:13:in `<top (required)>'
+C:/Ruby193/bin/scss:23:in `load'
+C:/Ruby193/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"  font-weight\": expected \";\", was \": 400;\"\A         on line 4 of fonts.scss\A \A 1: @font-face {\A 2:   font-family: 'New Johnson';\A 3:   src: url('../fonts/newjohnston.ttf')\A 4:   font-weight: 400;\A 5:   font-style: normal;\A 6: }"; }

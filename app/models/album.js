@@ -1,7 +1,14 @@
-var Album=function(){
-    (function (s) {
-        this.name=s[0];
-        this.pictureCount=s[1]
-        this.followingCount=s[5];
-    })(arguments)
-};
+define([], function () {
+    var Album = function () {
+        var self = this;
+        (function (s) {
+            self.id = ko.observable(s[0]),
+            self.name = ko.observable(s[1]);
+            self.count = ko.observable(s[2]);
+            self.cover=ko.observable(s[3]);
+            self.photos = ko.observableArray([]);
+            self.isPhotoFetched = ko.observable(false);
+        })(arguments)
+    };
+    return Album;
+});

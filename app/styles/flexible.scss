@@ -3,6 +3,7 @@
 @import "../../bower_components/susy/sass/_susy";
 @import "./functions";
 @import "./sprites";
+@import "./fonts";
 
 $susy:(
 columns:5,
@@ -41,6 +42,52 @@ h3{
 body{
   background-color:lightgray;
 }
+.album-list {
+  @include expand-menu();
+  ul {
+    @include clearfix();
+    padding: 4px 10px;
+    position: relative;
+    &:after {
+
+    }
+    &:before {
+
+    }
+    li {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid lightgray;
+      @include clearfix();
+      h4 {
+        @include inlBlk();
+        @include ellipsis(40%);
+        float: left;
+        margin-left: 20%;
+        margin-top: 10px;
+      }
+      .pic-count {
+        float: right;
+        width: 66px;
+        margin-right: 2%;
+        text-align: center;
+        padding-top: 13px;
+        font-size: 1.5em;
+        background-color: lightgray;
+        height: 50px;
+        border-radius: 25px;
+      }
+      .album-cover {
+        float: left;
+        img {
+          height: 50px;
+          width: 50px;
+        }
+
+      }
+    }
+  }
+}
 .container{
   @include container(90%);
   @include background-grid($susy);
@@ -64,6 +111,7 @@ body{
 .last-child{
   margin-right: 0 !important;
 }
+#profile{
 .profile-info{
   @include clearfix();
 .profile-about{
@@ -101,20 +149,6 @@ body{
     }
   }
 }
-.album-list{
-  @include clearfix();
-  li{
-    @include span(2 of 8);
-    img{
-      width: 100%;
-      border-radius: 7px;
-    }
-    border: 3px solid #f3f3f3;
-    &:hover {
-      border-radius: 7px;
-    }
-
-  }
 }
 footer{
 text-align: center;

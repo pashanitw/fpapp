@@ -1,0 +1,46 @@
+@import '../../bower_components/breakpoint-sass/stylesheets/_breakpoint.scss';
+@import "../../bower_components/susy/sass/_susy";
+@import "./functions";
+@import "./sprites";
+
+.more-info{
+  width: 100%;
+  display: block;
+  float: left;
+  line-height: 2;
+  li{
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    h3{
+      color: gray;
+    }
+  }
+}
+
+#friends{
+  .friend-info{
+    /* width: 100px; */
+    height: auto;
+    /* height: 100px; */
+    padding: 10px;
+    overflow: hidden;
+    img{
+      max-width: 100px;
+      max-height: 100px;
+      float: left;
+      border-radius: 50px;
+      margin-right: 10%;
+    }
+    .meta-info{
+      display: inline-block;
+      float: left;
+      text-align: center;
+      margin-top: 20px;
+      line-height: 1.2;
+      span{
+        color: grey;
+      }
+    }
+  }
+}

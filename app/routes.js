@@ -4,19 +4,20 @@ define(['route/router'],function(router){
             name:'Profile',
             url:"profile",
             controller:'controllers/profile',
-            view:'templates/profile'
+            view:'template/profile.html'
         },
-        {
-            name:'EditProfile',
-            url:"profile",
-            controller:'controllers/profile',
-            view:'templates/profile'
-        },
+
         {
             name:'Albums',
             url:"albums",
             controller:'controllers/albums',
-            view:'templates/albums'
+            view:'template/albums.html'
+        },
+        {
+            name: 'Friends',
+            url: "friends",
+            controller: 'controllers/friends',
+            view: 'template/friends.html'
         },
         {
             name:'Login',

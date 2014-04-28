@@ -4,7 +4,7 @@
 @import "./sprites";
 
 $mobil-view: 320px;
-$tablet-view: 660px 800px;
+$tablet-view: 660px 850px;
 $desktop: 800px 1200px;
 
 $layout_12:(
@@ -23,6 +23,8 @@ gutters:1/4
   @include layout($layout_16);
 }
 }
+#profile{
+
 .profile-info{
   @include breakpoint($tablet-view) {
     @include span(5 of 13);
@@ -80,17 +82,12 @@ gutters:1/4
 
 .album-list{
   @include breakpoint($tablet-view) {
-  @include pre(5 of 12);
+  @include span(7 of 12 last);
   }
   @include breakpoint($desktop){
-    @include pre(4 of 16);
+    @include span(12 of 16 last);
   }
   li{
-    @include breakpoint($tablet-view) {
-      @include span(2 of 8);
-    }
-    @include breakpoint($desktop){
-      @include span(4 of 12);
-    }
   }
+}
 }

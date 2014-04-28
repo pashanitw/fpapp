@@ -1,0 +1,87 @@
+.search-icon {
+  display: inline-block;
+  background: url("../images/symbol.png") 0 0 no-repeat;
+  background-size: 192px 5120px;
+  background-position: -142px -80px;
+  width: 36px;
+  height: 31px; }
+
+.expand-icon {
+  display: inline-block;
+  background: url("../images/symbol.png") 0 0 no-repeat;
+  background-size: 192px 5120px;
+  background-size: 96px 2560px;
+  background-position: -32px -704px;
+  width: 28px;
+  height: 28px; }
+
+.expand-icon {
+  display: inline-block;
+  background: url("../images/symbol.png") 0 0 no-repeat;
+  background-size: 192px 5120px;
+  background-size: 96px 2560px;
+  background-position: -32px -704px;
+  width: 28px;
+  height: 28px; }
+
+.previous-icon {
+  display: inline-block;
+  background: url("../images/symbol.png") 0 0 no-repeat;
+  background-size: 192px 5120px;
+  background-position: -16px -1170px;
+  width: 30px;
+  height: 34px;
+  left: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  z-index: 1000; }
+
+.next-icon {
+  display: inline-block;
+  background: url("../images/symbol.png") 0 0 no-repeat;
+  background-size: 192px 5120px;
+  background-position: -16px -1298px;
+  width: 30px;
+  height: 34px;
+  right: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  z-index: 1000;
+  cursor: pointer; }
+
+/* background-position: -16px -1493px; for - */
+.more-info {
+  width: 100%;
+  display: block;
+  float: left;
+  line-height: 2; }
+  .more-info li {
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid lightgray; }
+    .more-info li h3 {
+      color: gray; }
+
+#friends .friend-info {
+  /* width: 100px; */
+  height: auto;
+  /* height: 100px; */
+  padding: 10px;
+  overflow: hidden; }
+  #friends .friend-info img {
+    max-width: 100px;
+    max-height: 100px;
+    float: left;
+    border-radius: 50px;
+    margin-right: 10%; }
+  #friends .friend-info .meta-info {
+    display: inline-block;
+    float: left;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 1.2; }
+    #friends .friend-info .meta-info span {
+      color: grey; }

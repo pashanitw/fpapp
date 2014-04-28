@@ -16,7 +16,7 @@ var defRoute,
         cacheRoutes[defRoute.url].activate();
     },
     activate=function(route){
-       cacheRoutes[route.url].activate();
+       cacheRoutes[route.url || route].activate();
     }
     return {
         activateDefault:activateDefault,

@@ -8,11 +8,25 @@ var Route=function(){
         self.view=s[3];
     })(arguments);
 }
+var render=function(template){
+    console.log("template is",template);
+    var deferred = $.Deferred();
+    $.get(template, function (data) {
+        console.log(data);
+        $("#app").html('');
+        $("#app").append(data);
+        setTimeout(function () {
+            deferred.resolve();
+        });
+    });
+    return deferred.promise();
+    };
 Route.prototype.activate=function(){
     var self=this;
-    console.log("in activating Url",this.url);
-    require([self.controller], function (controller) {
-       controller.activate();
+    $.when(render(self.view)).then(function(){
+        require([self.controller], function (controller) {
+            controller.activate();
+        });
     });
 }
     return Route;

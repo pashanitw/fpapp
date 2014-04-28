@@ -1,40 +1,33 @@
-define(['views/profile'],function(profileView){
-    var activate=function(){
-        $.get('../template/profile.html', function (data) {
-            if (data) {
-                $('body').append(data);
-
-            }
+define(['views/profile', 'services/datacontext'], function (profileView, datacontext) {
+    var albums = ko.observableArray([]),
+        albumCount = ko.observable(),
+        likesCount = ko.observable(),
+        friendsCount = ko.observable(),
+        me=ko.observable();
+    var activate = function () {
+        $.when(datacontext.getBasicInfo()).then(function (resp) {
+            albums(resp['albums']);
+            albumCount(resp.albums.length);
+            likesCount(resp.likesCount);
+            friendsCount(resp.friendCount);
+            me(resp.me);
+            debugger;
+            console.log("this is me",me);
         });
-        fetchAlbumInfo();
     }
-    var render=function(){
+    var render = function () {
         console.log(coverPhotos);
-        document.getElementById('app').innerHTML= tmpl("profile",{albums:coverPhotos});
-    }
-    var coverPhotos=[],promises=[];
-    var fetchAlbumInfo=function(){
-        FB.api('me?fields=albums', 'get', function(data){
-            var albums=data.albums.data;
-            for(var i=0;i<albums.length;i++){
-                $.when(coverPhoto(albums[i].cover_photo)).then(function(){
-                    //render();
-                });
-            }
-
-
-        });
-    }
-    var width=500,height=506;
-    var coverPhoto=function(id){
-       return FB.api('/'+id+'/picture?width='+width+'&height='+height, function(resp){
-            console.log("this is resp",resp);
-           coverPhotos=[resp.data.url];
-           render();
-           // return resp.data.url;
-        });
-    }
+    };
+    var node = document.getElementById('app');
+    ko.cleanNode(node);
+    ko.applyBindings({
+        albums: albums,
+        me: me,
+        albumCount: albumCount,
+        likesCount: likesCount,
+        friendsCount: friendsCount
+    }, node);
     return {
-        activate:activate
+        activate: activate
     }
 });

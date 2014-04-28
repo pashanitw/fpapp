@@ -1,0 +1,49 @@
+<div id="friends">
+    <ul data-bind="foreach:friends">
+        <li class="friend-info">
+            <img data-bind="attr: { src: profilePic }" alt=""/>
+            <div class="meta-info">
+                <h3 data-bind="text:name"></h3>
+                <span data-bind="text:location.name"></span>
+            </div>
+            <span class="expand-icon"></span>
+            <div class="more-info">
+                <hr/>
+                <ul>
+                    <li>
+                        <h3>User Id </h3>
+                        <article data-bind="text:id"></article>
+                    </li>
+                    <li data-bind="if:work">
+                        <h3>Work and Education </h3>
+                        <article>
+                            <ul data-bind="foreach:work">
+                                <li>
+                                    <h3 data-bind="text:employer.name"></h3>
+                                    <h2 data-bind="text:position.name"></h2>
+                                    <h2 data-bind="text:location.name"></h2>
+                                </li>
+                            </ul>
+                        </article>
+                    </li>
+                    <li data-bind="if:birthday">
+                        <h3>BirthDate </h3>
+                        <article data-bind="text:birthday"></article>
+                    </li>
+                    <li data-bind="if:location">
+                        <h3>Location</h3>
+                        <span data-bind="text:location.name"></span>
+                    </li>
+                    <li data-bind="if:quotes">
+                        <h3>Quotes</h3>
+                        <span data-bind="text:quotes"></span>
+                    </li>
+                    <li data-bind="if:hometown">
+                        <h3>Home Town</h3>
+                        <span data-bind="text:hometown.name"></span>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

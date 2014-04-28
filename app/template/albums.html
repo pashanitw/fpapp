@@ -1,0 +1,51 @@
+<div id="slide-show">
+    <aside class="album-list">
+        <h3 class="menu">Albums <span class="expand-icon"></span></h3>
+        <ul data-bind="foreach:albums">
+            <li>
+                <div class="album-cover"><img data-bind="attr: { src: cover}" alt=""/></div>
+                <h4 data-bind="text:name"></h4>
+                <div class="pic-count"><span data-bind="text:count"/></div>
+            </li>
+
+        </ul>
+        <hr/>
+    </aside>
+    <div class="slide-view">
+        <div class="slider-container">
+            <span class="previous-icon"></span>
+            <span class="next-icon"></span>
+            <img src="images/cover.jpg" style="width: 100%;height: 100%" alt=""/>
+        </div>
+
+        <ul class="preview">
+            <span class="previous-icon"></span>
+            <span class="next-icon"></span>
+            <li><img src="images/cover.jpg" alt=""/></li>
+            <li><img src="images/cover.jpg" alt=""/></li>
+            <li><img src="images/cover.jpg" alt=""/></li>
+            <li><img src="images/cover.jpg" alt=""/></li>
+            <li><img src="images/cover.jpg" alt=""/></li>
+            <li><img src="images/cover.jpg" alt=""/></li>
+        </ul>
+
+    </div>
+    <div class="upload-pic">
+        <h3 class="menu">Upload Photo <span class="expand-icon"></span></h3>
+        <ul>
+            <li><h3>Select Album</h3>
+                <select name="" id="">
+                    <option value="">Album1</option>
+                    <option value="">Album2</option>
+                    <option value="">Album3</option>
+                </select>
+            </li>
+            <li>
+                <h3>Choose Photo</h3>
+                <input type="file"/>
+            </li>
+            <li class="upload-button"><a>Upload Photo</a></li>
+        </ul>
+
+    </div>
+</div>
