@@ -1,29 +1,44 @@
 require(['route/router','routes'],function(router,routes){
 var userPermissions=['user_likes','publish_actions','user_about_me','user_location','user_friends','user_photos','user_work_history',
     'friends_about_me','friends_hometown','friends_birthday','friends_hometown','friends_location','friends_work_history','friends_likes'].join(',');
-
-    FB.Event.subscribe('auth.authResponseChange', function (response) {
-        if (response.status === 'connected') {
-            console.log('Logged in');
-        } else {
-            FB.login(function(){}, {scope: userPermissions});
+    require.config({
+      shim: {
+        'facebook' : {
+          exports: 'FB'
         }
+      },
+      paths: {
+        'facebook': '//connect.facebook.net/en_US/all'
+      }
     });
-
-  //  FB.login(function(){}, {scope: userPermissions});
-    FB.getLoginStatus(function(response) {
-        if (response.authResponse) {
-            if(location.hash){
-                changeRoute();
-            }else{
-                router.activate("profile");
+    require(['facebook'],function(FB){
+        FB.init({
+                    appId: '572927169465707',
+                    status: true,
+                    xfbml: true
+                });
+        FB.Event.subscribe('auth.authResponseChange', function (response) {
+            if (response.status === 'connected') {
+                console.log('Logged in');
+            } else {
+                FB.login(function(){}, {scope: userPermissions});
             }
-        }else{
-            router.activate("login");
-        }
+        });
+        FB.getLoginStatus(function(response) {
+            if (response.authResponse) {
+                if(location.hash){
+                    changeRoute();
+                }else{
+                    router.activate("profile");
+                }
+            }else{
+                router.activate("login");
+            }
 
-        console.log(response);
+            console.log(response);
+        });
     });
+  //  FB.login(function(){}, {scope: userPermissions});
     function changeRoute(){
         router.activate(location.hash.split("#")[1]);
     }

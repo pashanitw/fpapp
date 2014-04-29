@@ -1,12 +1,14 @@
-define(['services/mapper','routes'],function(mapper,routes){
+define(['services/mapper','routes','facebook'],function(mapper,routes,FB){
     var cacheData={
         "albums":'',
-        "friends":'',
+        "friends":[],
         "me":'',
         "friendCount":'',
         "albumCount":'',
         "likesCount":''
-    };
+    },
+    friendOffset= 0,
+    friendLimit=10;
     var userPermissions=['user_likes','publish_actions','user_about_me','user_location','user_friends','user_photos','user_work_history',
         'friends_about_me','friends_hometown','friends_birthday','friends_hometown','friends_location','friends_work_history','friends_likes'].join(',');
     var login=function(){
@@ -46,14 +48,19 @@ define(['services/mapper','routes'],function(mapper,routes){
         return deferred.promise();
 
 },
+increaseLimit=function(){
+    friendOffset+=friendLimit;
+},
 getFriendsInfo=function(){
     var deferred= $.Deferred();
-FB.api('me/friends?fields=id,name,work,about,hometown,location,quotes,likes,birthday,picture.width(200).height(200)&offset=0&limit=10','get',function(response){
-    if(cacheData["friends"]){
+    console.log(friendOffset,friendLimit);
+FB.api('me/friends?fields=id,name,work,about,hometown,location,quotes,likes,birthday,picture.width(200).height(200)&offset=+'+friendOffset+'&limit='+friendLimit,'get',function(response){
+    if(cacheData["friends"].length&&cacheData["friends"].length===(friendOffset+friendLimit)){
         alert("im fucking");
         deferred.resolve(cacheData["friends"]);
     }else{
-        cacheData["friends"]=mapper.mapUsers(response.data);
+        debugger;
+        cacheData["friends"]= cacheData["friends"].concat(mapper.mapUsers(response.data));
         console.log("test flags",cacheData["friends"],response.data);
         deferred.resolve(cacheData["friends"]);
     }
@@ -86,6 +93,7 @@ show=function(id){
         enableProgress:enableProgress,
         disableProgress:disableProgress,
         login:login,
-        show:show
+        show:show,
+        increaseLimit:increaseLimit
     }
 });

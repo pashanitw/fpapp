@@ -6,6 +6,7 @@ define(function(){
             self.name=ko.observable(s[1]);
             self.birthday=ko.observable(s[2]);
             self.work = ko.observableArray([]);
+            console.log("s3",s[3]);
             self.work(s[3])
             self.location = ko.observable(s[4]),
             self.quotes = ko.observable(s[5]);

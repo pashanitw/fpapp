@@ -16,14 +16,20 @@
                         <h3>User Id </h3>
                         <article data-bind="text:id"></article>
                     </li>
-                    <li data-bind="if:work.length">
+                    <li data-bind="if:work()">
                         <h3>Work and Education </h3>
                         <article>
                             <ul data-bind="foreach:work">
                                 <li>
+                                    <!-- ko if: "employer" in $data -->
                                     <h3 data-bind="text:employer.name"></h3>
+                                    <!-- /ko -->
+                                    <!-- ko if: "position" in $data -->
                                     <h2 data-bind="text:position.name"></h2>
+                                    <!-- /ko -->
+                                    <!-- ko if: "location" in $data -->
                                     <h2 data-bind="text:location.name"></h2>
+                                    <!-- /ko -->
                                 </li>
                             </ul>
                         </article>
@@ -48,4 +54,5 @@
             </div>
         </li>
     </ul>
+    <a href="" data-bind="click:loadMoreFriends">load more</a>
 </div>
