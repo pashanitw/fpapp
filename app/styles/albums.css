@@ -1,58 +1,3 @@
-.search-icon {
-  display: inline-block;
-  background: url("../images/symbol.png") 0 0 no-repeat;
-  background-size: 192px 5120px;
-  background-position: -142px -80px;
-  width: 36px;
-  height: 31px; }
-
-.expand-icon {
-  display: inline-block;
-  background: url("../images/symbol.png") 0 0 no-repeat;
-  background-size: 192px 5120px;
-  background-size: 96px 2560px;
-  background-position: -32px -704px;
-  width: 28px;
-  height: 28px; }
-
-.expand-icon {
-  display: inline-block;
-  background: url("../images/symbol.png") 0 0 no-repeat;
-  background-size: 192px 5120px;
-  background-size: 96px 2560px;
-  background-position: -32px -704px;
-  width: 28px;
-  height: 28px; }
-
-.previous-icon {
-  display: inline-block;
-  background: url("../images/symbol.png") 0 0 no-repeat;
-  background-size: 192px 5120px;
-  background-position: -16px -1170px;
-  width: 30px;
-  height: 34px;
-  left: 0;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  margin-top: -15px;
-  z-index: 1000; }
-
-.next-icon {
-  display: inline-block;
-  background: url("../images/symbol.png") 0 0 no-repeat;
-  background-size: 192px 5120px;
-  background-position: -16px -1298px;
-  width: 30px;
-  height: 34px;
-  right: 0;
-  position: absolute;
-  top: 50%;
-  margin-top: -15px;
-  z-index: 1000;
-  cursor: pointer; }
-
-/* background-position: -16px -1493px; for - */
 #slide-show {
   width: 100%;
   float: left;
@@ -120,6 +65,7 @@
     width: 90%;
     margin: 0 auto;
     border: 2px solid lightgray;
+    clear: both;
     margin-bottom: 2px; }
     #slide-show .upload-pic .menu {
       position: relative;

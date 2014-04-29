@@ -25,6 +25,7 @@ Route.prototype.activate=function(){
     var self=this;
     $.when(render(self.view)).then(function(){
         require([self.controller], function (controller) {
+            controller.applyBindings();
             controller.activate();
         });
     });

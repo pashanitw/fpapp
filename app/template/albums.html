@@ -1,7 +1,8 @@
 <div id="slide-show">
     <aside class="album-list">
-        <h3 class="menu">Albums <span class="expand-icon"></span></h3>
-        <ul data-bind="foreach:albums">
+        <h3 class="menu">Albums <span class="expand-icon controls" data-bind="visible:!isAlbumExpanded(),click:toggleAlbumExpand.bind($data,true)"></span>
+            <span class="collapse-icon controls" data-bind="visible:isAlbumExpanded,click:toggleAlbumExpand.bind($data,false)"></span></h3>
+        <ul data-bind="foreach:albums,visible:isAlbumExpanded">
             <li>
                 <div class="album-cover"><img data-bind="attr: { src: cover}" alt=""/></div>
                 <h4 data-bind="text:name"></h4>
@@ -31,8 +32,10 @@
 
     </div>
     <div class="upload-pic">
-        <h3 class="menu">Upload Photo <span class="expand-icon"></span></h3>
-        <ul>
+        <h3 class="menu">Upload Photo
+            <span class="expand-blue-icon controls" data-bind="visible:!isUploadExpanded(),click:toggleUploadExpand.bind($data,true)"></span>
+            <span class="collapse-blue-icon controls" data-bind="visible:isUploadExpanded,click:toggleUploadExpand.bind($data,false)"></span></h3>
+        <ul data-bind="visible:isUploadExpanded">
             <li><h3>Select Album</h3>
                 <select name="" id="">
                     <option value="">Album1</option>

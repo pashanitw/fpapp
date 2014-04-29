@@ -27,8 +27,17 @@ html{
 body{
   min-height: 100%;
 }
+#profile,#slide-show,#login,#friends{
+  opacity: 0;
+}
+.controls{
+  cursor: pointer;
+}
 .container{
   min-height: 100%;
+}
+#app{
+  min-height: 700px;
 }
 a{
   color: inherit;
@@ -42,11 +51,22 @@ h3{
   display: none;
 }
 
-.nav-elem{
-  @include pullRight();
-  li{
-    @include pullLeft();
+.main-navigation{
+  @include clearfix();
+  h3{
+    float: left;
   }
+  ul{
+    @include clearfix();
+    float: right;
+    padding-top: 3px;
+    li{
+      float: left;
+      font-size: 0.9em;
+      margin-right: 16px;
+    }
+  }
+
 }
 body{
   background-color:lightgray;
@@ -84,7 +104,10 @@ body{
         @include ellipsis(40%);
         float: left;
         margin-left: 20%;
-        margin-top: 10px;
+        margin-top: 16px;
+        color: gray;
+        font-size: 1.2em;
+      }
       }
       .pic-count {
         float: right;
@@ -107,7 +130,7 @@ body{
       }
     }
   }
-}
+
 .container{
   @include container(90%);
   @include background-grid($susy);

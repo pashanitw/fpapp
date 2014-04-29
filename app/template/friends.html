@@ -1,20 +1,22 @@
 <div id="friends">
     <ul data-bind="foreach:friends">
         <li class="friend-info">
+            <div class="summary">
             <img data-bind="attr: { src: profilePic }" alt=""/>
             <div class="meta-info">
                 <h3 data-bind="text:name"></h3>
                 <span data-bind="text:location.name"></span>
             </div>
-            <span class="expand-icon"></span>
-            <div class="more-info">
-                <hr/>
+            <span class="expand-blue-icon" data-bind="visible:!isExpanded(),click:$parent.toggleFriendExpand"></span>
+            <span class="collapse-blue-icon" data-bind="visible:isExpanded,click:$parent.toggleFriendExpand"></span>
+            </div>
+            <div class="more-info" data-bind="visible:isExpanded">
                 <ul>
                     <li>
                         <h3>User Id </h3>
                         <article data-bind="text:id"></article>
                     </li>
-                    <li data-bind="if:work">
+                    <li data-bind="if:work.length">
                         <h3>Work and Education </h3>
                         <article>
                             <ul data-bind="foreach:work">

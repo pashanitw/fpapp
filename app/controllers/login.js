@@ -1,12 +1,26 @@
-define([],function(){
-  var userPermissions=['user_likes','publish_actions','user_about_me','user_location','user_friends','user_photos','user_work_history',
-        'friends_about_me','friends_hometown','friends_birthday','friends_hometown','friends_location','friends_work_history','friends_likes'].join(',');
+define(['services/datacontext'],function(datacontext){
    var login=function(){
-       FB.login(function(){
+       datacontext.login();
+       },
+       showView=ko.observable(false);
+    var applyBindings = function () {
+        var node = document.getElementById('app');
+        ko.cleanNode(node);
+        ko.applyBindings({
+            login: login,
+            showView: showView
+        }, node);
+    }
 
-       }, {scope: userPermissions});
-   }
+    var activate=function(){
+        login();
+    }
+
     return {
-        login:login
+        login:login,
+        activate:activate,
+        showView:showView,
+        applyBindings:applyBindings
+
     }
 });

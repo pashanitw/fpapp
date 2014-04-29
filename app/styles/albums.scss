@@ -1,8 +1,6 @@
 @import '../../bower_components/breakpoint-sass/stylesheets/_breakpoint.scss';
 @import "../../bower_components/susy/sass/_susy";
 @import "./functions";
-@import "./sprites";
-
 $mobil-view: 320px;
 $tablet-view: 660px 800px;
 $desktop: 800px 1200px;
@@ -81,6 +79,7 @@ $desktop: 800px 1200px;
     @include breakpoint($desktop) {
       @include span(4 of 12 last);
     }
+    clear: both;
     margin-bottom: 2px;
     li {
       line-height: 2;

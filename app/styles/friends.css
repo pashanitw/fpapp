@@ -1,76 +1,30 @@
-.search-icon {
-  display: inline-block;
-  background: url("../images/symbol.png") 0 0 no-repeat;
-  background-size: 192px 5120px;
-  background-position: -142px -80px;
-  width: 36px;
-  height: 31px; }
-
-.expand-icon {
-  display: inline-block;
-  background: url("../images/symbol.png") 0 0 no-repeat;
-  background-size: 192px 5120px;
-  background-size: 96px 2560px;
-  background-position: -32px -704px;
-  width: 28px;
-  height: 28px; }
-
-.expand-icon {
-  display: inline-block;
-  background: url("../images/symbol.png") 0 0 no-repeat;
-  background-size: 192px 5120px;
-  background-size: 96px 2560px;
-  background-position: -32px -704px;
-  width: 28px;
-  height: 28px; }
-
-.previous-icon {
-  display: inline-block;
-  background: url("../images/symbol.png") 0 0 no-repeat;
-  background-size: 192px 5120px;
-  background-position: -16px -1170px;
-  width: 30px;
-  height: 34px;
-  left: 0;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  margin-top: -15px;
-  z-index: 1000; }
-
-.next-icon {
-  display: inline-block;
-  background: url("../images/symbol.png") 0 0 no-repeat;
-  background-size: 192px 5120px;
-  background-position: -16px -1298px;
-  width: 30px;
-  height: 34px;
-  right: 0;
-  position: absolute;
-  top: 50%;
-  margin-top: -15px;
-  z-index: 1000;
-  cursor: pointer; }
-
-/* background-position: -16px -1493px; for - */
 .more-info {
   width: 100%;
   display: block;
   float: left;
-  line-height: 2; }
-  .more-info li {
-    padding: 2px;
-    border-radius: 5px;
+  line-height: 2;
+  margin-top: 15px;
+  background: whitesmoke; }
+  .more-info ul {
     border: 1px solid lightgray; }
-    .more-info li h3 {
-      color: gray; }
+    .more-info ul li {
+      padding: 2px;
+      border-radius: 5px; }
+      .more-info ul li h3 {
+        color: gray; }
 
 #friends .friend-info {
-  /* width: 100px; */
   height: auto;
-  /* height: 100px; */
   padding: 10px;
-  overflow: hidden; }
+  overflow: hidden;
+  border-bottom: 1px solid lightgray; }
+  #friends .friend-info .summary {
+    position: relative; }
+    #friends .friend-info .summary:before, #friends .friend-info .summary:after {
+      content: "";
+      display: table; }
+    #friends .friend-info .summary:after {
+      clear: both; }
   #friends .friend-info img {
     max-width: 100px;
     max-height: 100px;

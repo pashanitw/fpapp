@@ -1,14 +1,4 @@
-@mixin sprite() {
-  background: url("../images/symbol.png") 0 0 no-repeat;
-  background-size: 192px 5120px;
-}
-@mixin width-height($width:0,$height:0){
-  width: $width;
-  height: $height;
-}
-@mixin inlBlk(){
-  display: inline-block;
-}
+@import "./functions";
 .search-icon{
   @include inlBlk();
   @include sprite();
@@ -20,6 +10,34 @@
   @include sprite();
   background-size: 96px 2560px;
   background-position: -32px -704px;
+  width: 28px;
+  height: 28px;
+}
+.expand-blue-icon{
+  @include inlBlk();
+  @include sprite();
+  @include expand-middile();
+  @include pointer();
+  background-size: 96px 2560px;
+  background-position: -3px -704px;
+  width: 28px;
+  height: 28px;
+}
+.collapse-icon{
+  @include inlBlk();
+  @include sprite();
+  background-size: 96px 2560px;
+   background-position: -32px -736px;
+  width: 28px;
+  height: 28px;
+}
+.collapse-blue-icon{
+  @include inlBlk();
+  @include sprite();
+  @include expand-middile();
+  @include pointer();
+  background-size: 96px 2560px;
+  background-position: -3px -736px;
   width: 28px;
   height: 28px;
 }

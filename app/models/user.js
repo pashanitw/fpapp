@@ -13,6 +13,7 @@ define(function(){
             self.hometown=ko.observable(s[7]);
             self.firstName = ko.observable(s[8]);
             self.secondName = ko.observable(s[9]);
+            self.isExpanded=ko.observable(false);
         })(arguments)
     };
     return User;

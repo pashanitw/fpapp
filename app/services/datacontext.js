@@ -1,4 +1,4 @@
-define(['services/mapper'],function(mapper){
+define(['services/mapper','routes'],function(mapper,routes){
     var cacheData={
         "albums":'',
         "friends":'',
@@ -6,14 +6,26 @@ define(['services/mapper'],function(mapper){
         "friendCount":'',
         "albumCount":'',
         "likesCount":''
-    }
-var getBasicInfo=function(){
+    };
+    var userPermissions=['user_likes','publish_actions','user_about_me','user_location','user_friends','user_photos','user_work_history',
+        'friends_about_me','friends_hometown','friends_birthday','friends_hometown','friends_location','friends_work_history','friends_likes'].join(',');
+    var login=function(){
+           enableProgress();
+        FB.login(function(response){
+            disableProgress();
+             routes.activate("profile");
+        }, {scope: userPermissions});
+        },
+ getBasicInfo=function(){
         var deferred= $.Deferred(),coverRequests=[];
         if(cacheData["albums"]&&cacheData["friendCount"]&&cacheData["albumCount"]&&cacheData["likesCount"]&&cacheData["me"]){
-            deferred.resolve(cacheData["albums"]);
+            deferred.resolve(cacheData);
         }else{
             FB.api('me?fields=id,name,birthday,work,about,friends,location,hometown,quotes,albums,likes,picture.width(100).height(100)', 'get', function(response){
-                var albums=response.albums.data,resolved= 0,friends=response.friends.data,likes=response.likes.data;
+                var albums=response.albums?response.albums.data:[],
+                    resolved= 0,
+                    friends=response.friends?response.friends.data:[],
+                    likes=response.likes?response.likes.data:[];
 
                 console.log("pic url",response.picture.data.url);
                 for(var i=0;i<albums.length;i++){
@@ -36,7 +48,7 @@ var getBasicInfo=function(){
 },
 getFriendsInfo=function(){
     var deferred= $.Deferred();
-FB.api('me/friends?fields=id,name,work,about,hometown,location,quotes,likes,birthday,picture.width(200).height(200)','get',function(response){
+FB.api('me/friends?fields=id,name,work,about,hometown,location,quotes,likes,birthday,picture.width(200).height(200)&offset=0&limit=10','get',function(response){
     if(cacheData["friends"]){
         alert("im fucking");
         deferred.resolve(cacheData["friends"]);
@@ -59,23 +71,21 @@ coverPhoto=function(album){
         });
     return deferred.promise();
 },
-getFriends=function(){
-    FB.api('me/albums','get',function(data){
-        console.log(data);
-    })
-}
-getAlbumCoverPhoto=function(){
-
+enableProgress = function () {
+    $("#pageLoader").css('display', 'block');
 },
-login=function(){
-    FB.login(function(data){
-        return data;
-    }, {scope: userPermissions});
-}
+disableProgress = function () {
+    $("#pageLoader").css('display', 'none');
+},
+show=function(id){
+    $("#"+id).css('opacity', 1);
+};
     return {
         getBasicInfo:getBasicInfo,
-        getFriends:getFriends,
-        getAlbumCoverPhoto:getAlbumCoverPhoto,
-        getFriendsInfo:getFriendsInfo
+        getFriendsInfo:getFriendsInfo,
+        enableProgress:enableProgress,
+        disableProgress:disableProgress,
+        login:login,
+        show:show
     }
 });

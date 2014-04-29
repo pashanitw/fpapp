@@ -46,3 +46,24 @@
   text-overflow: ellipsis;
   max-width: $max-width;
 }
+@mixin sprite() {
+  background: url("../images/symbol.png") 0 0 no-repeat;
+  background-size: 192px 5120px;
+}
+@mixin width-height($width:0,$height:0){
+  width: $width;
+  height: $height;
+}
+@mixin inlBlk(){
+  display: inline-block;
+}
+@mixin expand-middile(){
+  right: 0;
+  position: absolute;
+  margin-right: 3px;
+  top: 50%;
+  margin-top: -17px;
+}
+@mixin pointer(){
+  cursor: pointer;
+}

@@ -9,24 +9,23 @@ var userPermissions=['user_likes','publish_actions','user_about_me','user_locati
             FB.login(function(){}, {scope: userPermissions});
         }
     });
+
   //  FB.login(function(){}, {scope: userPermissions});
     FB.getLoginStatus(function(response) {
-        /*if (response.authResponse) {
-            // alert('Welcome!  Fetching your information.... ');
-            FB.api('/me', function(response) {
-                alert('Good to see you, ' + response.name + '.');
-            });
-        }*/
-       /* FB.api('me/friends?fields=first_name,work,hometown,location,birthday,picture.width(200).height(200)', function(response) {
-            console.log('Good to see you, ' , response);
-        });*/
+        if (response.authResponse) {
+            if(location.hash){
+                changeRoute();
+            }else{
+                router.activate("profile");
+            }
+        }else{
+            router.activate("login");
+        }
+
         console.log(response);
     });
     function changeRoute(){
         router.activate(location.hash.split("#")[1]);
-    }
-    if(location.hash){
-        changeRoute();
     }
     $(window).bind( 'hashchange', function(e) {
         changeRoute();

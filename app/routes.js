@@ -23,7 +23,7 @@ define(['route/router'],function(router){
             name:'Login',
             url:"login",
             controller:'controllers/login',
-            view:'templates/login'
+            view:'template/login.html'
         }
         ],
         activate=function(){
