@@ -1,4 +1,4 @@
-require(['route/router','routes'],function(router,routes){
+require(['route/router','routes','services/global'],function(router,routes,global){
 var userPermissions=['user_likes','publish_actions','user_about_me','user_location','user_friends','user_photos','user_work_history',
     'friends_about_me','friends_hometown','friends_birthday','friends_hometown','friends_location','friends_work_history','friends_likes'].join(',');
     require.config({
@@ -26,6 +26,7 @@ var userPermissions=['user_likes','publish_actions','user_about_me','user_locati
         });
         FB.getLoginStatus(function(response) {
             if (response.authResponse) {
+                global.setAccessToken(response.authResponse.accessToken);
                 if(location.hash){
                     changeRoute();
                 }else{
@@ -35,7 +36,6 @@ var userPermissions=['user_likes','publish_actions','user_about_me','user_locati
                 router.activate("login");
             }
 
-            console.log(response);
         });
     });
   //  FB.login(function(){}, {scope: userPermissions});

@@ -8,9 +8,12 @@
   line-height: 2;
   margin-top: 15px;
   background: whitesmoke;
+  border: 1px solid lightgray;
   ul{
-    border: 1px solid lightgray;
     li{
+      h2{
+        font-size: 1.1em;
+      }
       padding: 2px;
       border-radius: 5px;
       h3{
@@ -21,6 +24,7 @@
 }
 
 #friends{
+  text-align: center;
   .friend-info{
     height: auto;
     padding: 10px;
@@ -43,6 +47,14 @@
       text-align: center;
       margin-top: 20px;
       line-height: 1.2;
+      h3{
+        @include breakpoint($mobil-view) {
+          overflow: hidden;
+          white-space: nowrap;
+          max-width: 160px;
+          text-overflow: ellipsis;
+        }
+      }
       span{
         color: grey;
       }

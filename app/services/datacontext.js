@@ -1,6 +1,7 @@
 define(['services/mapper','routes','facebook'],function(mapper,routes,FB){
     var cacheData={
-        "albums":'',
+        "albums":{},
+        "metaAlbums":"",
         "friends":[],
         "me":'',
         "friendCount":'',
@@ -20,7 +21,7 @@ define(['services/mapper','routes','facebook'],function(mapper,routes,FB){
         },
  getBasicInfo=function(){
         var deferred= $.Deferred(),coverRequests=[];
-        if(cacheData["albums"]&&cacheData["friendCount"]&&cacheData["albumCount"]&&cacheData["likesCount"]&&cacheData["me"]){
+        if(cacheData["albums"].fetched&&cacheData["friendCount"]&&cacheData["albumCount"]&&cacheData["likesCount"]&&cacheData["me"]){
             deferred.resolve(cacheData);
         }else{
             FB.api('me?fields=id,name,birthday,work,about,friends,location,hometown,quotes,albums,likes,picture.width(100).height(100)', 'get', function(response){
@@ -28,12 +29,11 @@ define(['services/mapper','routes','facebook'],function(mapper,routes,FB){
                     resolved= 0,
                     friends=response.friends?response.friends.data:[],
                     likes=response.likes?response.likes.data:[];
-
-                console.log("pic url",response.picture.data.url);
                 for(var i=0;i<albums.length;i++){
                     $.when(coverPhoto(albums[i])).done(function(resp){
                         if(++resolved===albums.length){
-                            cacheData["albums"]= mapper.mapAlbums(albums);
+                            cacheData["metaAlbums"]= mapper.mapAlbums(albums,cacheData["albums"]);
+                            console.log(cacheData["metaAlbums"],cacheData["albums"]);
                             cacheData["friendCount"]=friends.length;
                             cacheData["albumCount"]=albums.length;
                             cacheData["likesCount"]=likes.length;
@@ -67,6 +67,21 @@ FB.api('me/friends?fields=id,name,work,about,hometown,location,quotes,likes,birt
 });
     return deferred.promise();
 },
+fetchAlbumById=function(id){
+    var deferred= $.Deferred();
+    if(cacheData["albums"].fetched&&cacheData["albums"][id]&&cacheData["albums"][id].isPhotoFetched()){
+        deferred.resolve(cacheData["albums"][id].photos);
+    }else{
+        FB.api(id+"/photos?fields=source,name",function(resp){
+            cacheData["albums"][id].photos=mapper.mapPhotos(resp.data);
+            cacheData["albums"][id].isPhotoFetched(true);
+            console.log("ftched photos",cacheData["albums"][id].photos);
+            deferred.resolve(cacheData["albums"][id].photos);
+        });
+    }
+    return deferred;
+
+},
 coverPhoto=function(album){
     id=album.cover_photo
     var width=500,height=500,deferred=$.Deferred();
@@ -94,6 +109,7 @@ show=function(id){
         disableProgress:disableProgress,
         login:login,
         show:show,
-        increaseLimit:increaseLimit
+        increaseLimit:increaseLimit,
+        fetchAlbumById:fetchAlbumById
     }
 });

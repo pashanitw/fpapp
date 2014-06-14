@@ -5,7 +5,9 @@
             <img data-bind="attr: { src: profilePic }" alt=""/>
             <div class="meta-info">
                 <h3 data-bind="text:name"></h3>
-                <span data-bind="text:location.name"></span>
+                <!-- ko if: location -->
+                <span data-bind="text:location().name"></span>
+                <!-- /ko -->
             </div>
             <span class="expand-blue-icon" data-bind="visible:!isExpanded(),click:$parent.toggleFriendExpand"></span>
             <span class="collapse-blue-icon" data-bind="visible:isExpanded,click:$parent.toggleFriendExpand"></span>
@@ -22,7 +24,7 @@
                             <ul data-bind="foreach:work">
                                 <li>
                                     <!-- ko if: "employer" in $data -->
-                                    <h3 data-bind="text:employer.name"></h3>
+                                    <h2 data-bind="text:employer.name"></h2>
                                     <!-- /ko -->
                                     <!-- ko if: "position" in $data -->
                                     <h2 data-bind="text:position.name"></h2>
@@ -40,7 +42,7 @@
                     </li>
                     <li data-bind="if:location">
                         <h3>Location</h3>
-                        <span data-bind="text:location.name"></span>
+                        <span data-bind="text:location().name"></span>
                     </li>
                     <li data-bind="if:quotes">
                         <h3>Quotes</h3>
@@ -48,11 +50,11 @@
                     </li>
                     <li data-bind="if:hometown">
                         <h3>Home Town</h3>
-                        <span data-bind="text:hometown.name"></span>
+                        <span data-bind="text:hometown().name"></span>
                     </li>
                 </ul>
             </div>
         </li>
     </ul>
-    <a href="" data-bind="click:loadMoreFriends">load more</a>
+    <a href="" data-bind="click:loadMoreFriends" class="btn">load more</a>
 </div>

@@ -9,7 +9,7 @@ define(['route/router'],function(router){
 
         {
             name:'Albums',
-            url:"albums",
+            url:"albums/:id",
             controller:'controllers/albums',
             view:'template/albums.html'
         },

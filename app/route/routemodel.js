@@ -21,12 +21,12 @@ var render=function(template){
     });
     return deferred.promise();
     };
-Route.prototype.activate=function(){
+Route.prototype.activate=function(data){
     var self=this;
     $.when(render(self.view)).then(function(){
         require([self.controller], function (controller) {
             controller.applyBindings();
-            controller.activate();
+            controller.activate(data);
         });
     });
 }

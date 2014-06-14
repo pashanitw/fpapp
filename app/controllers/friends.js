@@ -5,6 +5,7 @@ define(['services/datacontext'], function (datacontext) {
         },
         getFriends=function () {
             datacontext.enableProgress();
+            debugger;
             $.when(datacontext.getFriendsInfo()).then(function (data) {
                  friends(data);
                 datacontext.disableProgress();

@@ -4,6 +4,7 @@ var defRoute,
     cacheRoutes={
         length:0
     },
+    hashRegex=/^(.+?)\/(.+)$/,
     register=function(routeArray,defaultRoute){
         var index,len,route;
         defRoute=defRoute||0;
@@ -16,7 +17,20 @@ var defRoute,
         cacheRoutes[defRoute.url].activate();
     },
     activate=function(route){
-       cacheRoutes[route.url || route].activate();
+        debugger;
+        var hash,data;
+        var url=route.url||route;
+        var match=url.match(hashRegex);
+        if(match){
+            url=match[1];
+          data=match[2];
+        }
+
+        var route=cacheRoutes[url]||cacheRoutes[url+"/:id"];
+        if(route){
+            route.activate(data);
+        }
+
     }
     return {
         activateDefault:activateDefault,

@@ -1,11 +1,6 @@
 @import '../../bower_components/breakpoint-sass/stylesheets/_breakpoint.scss';
 @import "../../bower_components/susy/sass/_susy";
 @import "./functions";
-
-$mobil-view: 320px;
-$tablet-view: 660px 850px;
-$desktop: 800px 1200px;
-
 $layout_12:(
 columns:13,
 gutters:1/4

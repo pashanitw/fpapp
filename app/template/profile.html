@@ -25,9 +25,11 @@
         <h3 class="menu">Albums <span class="expand-icon"></span></h3>
         <ul data-bind="foreach:albums">
             <li>
+                <a data-bind="attr: { href: '#albums/'+id() }">
                 <div class="album-cover"><img data-bind="attr: { src: cover }" alt=""/></div>
                 <h4 data-bind="text:name"></h4>
                 <div class="pic-count"><span data-bind="text:count"/></div>
+                </a>
             </li>
         </ul>
     </article>

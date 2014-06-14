@@ -4,38 +4,47 @@
   float: left;
   line-height: 2;
   margin-top: 15px;
-  background: whitesmoke; }
-  .more-info ul {
-    border: 1px solid lightgray; }
-    .more-info ul li {
-      padding: 2px;
-      border-radius: 5px; }
-      .more-info ul li h3 {
-        color: gray; }
+  background: whitesmoke;
+  border: 1px solid lightgray; }
+  .more-info ul li {
+    padding: 2px;
+    border-radius: 5px; }
+    .more-info ul li h2 {
+      font-size: 1.1em; }
+    .more-info ul li h3 {
+      color: gray; }
 
-#friends .friend-info {
-  height: auto;
-  padding: 10px;
-  overflow: hidden;
-  border-bottom: 1px solid lightgray; }
-  #friends .friend-info .summary {
-    position: relative; }
-    #friends .friend-info .summary:before, #friends .friend-info .summary:after {
-      content: "";
-      display: table; }
-    #friends .friend-info .summary:after {
-      clear: both; }
-  #friends .friend-info img {
-    max-width: 100px;
-    max-height: 100px;
-    float: left;
-    border-radius: 50px;
-    margin-right: 10%; }
-  #friends .friend-info .meta-info {
-    display: inline-block;
-    float: left;
-    text-align: center;
-    margin-top: 20px;
-    line-height: 1.2; }
-    #friends .friend-info .meta-info span {
-      color: grey; }
+#friends {
+  text-align: center; }
+  #friends .friend-info {
+    height: auto;
+    padding: 10px;
+    overflow: hidden;
+    border-bottom: 1px solid lightgray; }
+    #friends .friend-info .summary {
+      position: relative; }
+      #friends .friend-info .summary:before, #friends .friend-info .summary:after {
+        content: "";
+        display: table; }
+      #friends .friend-info .summary:after {
+        clear: both; }
+    #friends .friend-info img {
+      max-width: 100px;
+      max-height: 100px;
+      float: left;
+      border-radius: 50px;
+      margin-right: 10%; }
+    #friends .friend-info .meta-info {
+      display: inline-block;
+      float: left;
+      text-align: center;
+      margin-top: 20px;
+      line-height: 1.2; }
+      @media (min-width: 320px) {
+        #friends .friend-info .meta-info h3 {
+          overflow: hidden;
+          white-space: nowrap;
+          max-width: 160px;
+          text-overflow: ellipsis; } }
+      #friends .friend-info .meta-info span {
+        color: grey; }

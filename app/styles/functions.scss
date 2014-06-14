@@ -1,3 +1,7 @@
+$mobil-view: 320px;
+$tablet-view: 660px 800px;
+$desktop: 800px;
+
 @mixin clearfix() {
   &:before,
   &:after {

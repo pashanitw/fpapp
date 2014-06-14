@@ -7,7 +7,7 @@ define(['views/profile', 'services/datacontext'], function (profileView, datacon
     var activate = function () {
         datacontext.enableProgress();
         $.when(datacontext.getBasicInfo()).then(function (resp) {
-            albums(resp['albums']);
+            albums(resp['metaAlbums']);
             albumCount(resp.albums.length);
             likesCount(resp.likesCount);
             friendsCount(resp.friendCount);
